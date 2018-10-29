@@ -16,18 +16,22 @@ method_name = 'sendmessage'
 msg = '안녕하세요'
 
 
-url = 'https://finance.naver.com/sise/'
-req = requests.get(url).text
+url_cos = 'https://finance.naver.com/sise/'
+req = requests.get(url_cos).text
 soup = bs(req,'html.parser')    #html.parser
 #print(soup)
 
 select = soup.select_one('#KOSPI_now').text
-
 msg_url = 'https://api.telegram.org/bot{}/{}?chat_id={}&text={}'.format(token, method_name, user_id, select)
 
 
-# import requests
 
+
+
+
+
+
+# import requests
 # url = 'https://finance.naver.com/sise/'
 # req = requests.get(url).text
 # soup = bs(req,'lxml')    #html.parser
